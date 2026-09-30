@@ -1,0 +1,102 @@
+.navbar {
+    background: rgb(30, 30, 30);
+    height: 5rem;
+    width: 100%; /* Changed from 100vw to prevent horizontal screen breakage */
+    max-width: 75rem;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    box-sizing: border-box; /* Crucial: Keeps padding calculated inside the width */
+}
+
+.logo {
+    object-fit: cover;
+    height: 3rem;
+    width: 4rem;
+}
+
+.desktopMenuListItem {
+    margin: 1rem;
+    cursor: pointer;
+    color: white; /* Ensure text color is visible */
+    text-decoration: none;
+}
+
+.desktopMenuListItem:hover, .active {
+    color: yellow;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid yellow;
+}
+
+.desktopMenuBtn {
+    background: white;
+    color: black;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem; /* Better balance than padding: 0 1rem */
+    border-radius: 2rem;
+    cursor: pointer;
+}
+
+.desktopMenuImg {
+    object-fit: cover;
+    height: 1rem;
+    width: 1rem;
+    margin-right: 0.5rem; /* Replaced margin: 1rem to keep layout compact */
+}
+
+.mobMenu {
+    display: none; /* Kept hidden on desktop viewports */
+    object-fit: cover;
+    height: 1.8rem;
+    cursor: pointer;
+}
+
+/* Base styling for mobile menu dropdown */
+.navMenu {
+    position: absolute;
+    top: 5rem; /* Adjusted to align with navbar bottom height */
+    right: 2rem;
+    z-index: 2;
+    display: none; /* Changed from 'flex' by default so it stays hidden on desktop layouts */
+    flex-direction: column;
+    padding: 0.5rem;
+    height: fit-content;
+    min-width: 15rem;
+    background: rgb(40, 40, 40);
+    border-radius: 1rem;
+}
+
+.listItem {
+    color: white;
+    padding: 0.75rem 2rem;
+    margin: 0.25rem;
+    background: rgb(30, 30, 30);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* Responsive Rules */
+@media screen and (max-width: 720px) {
+    .mobMenu {
+        display: block; /* Changes to block to let image appear cleanly */
+    }
+    .desktopMenu {
+        display: none;
+    }
+    .desktopMenuBtn {
+        display: none;
+    }
+    /* Let the dynamic inline-style (display: showMenu ? 'flex' : 'none') handle visibility */
+    .navMenu {
+        box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+    }
+}

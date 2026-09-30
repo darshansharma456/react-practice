@@ -1,0 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    background: tr;
+}
+
+body {
+    background-color: rgb(30, 30, 30); /* Or whatever your dark background color choice is */
+    color: white;
+    overflow-x: hidden; /* Stops horizontal screen shaking completely */
+}
